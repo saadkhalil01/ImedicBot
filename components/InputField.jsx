@@ -1,10 +1,10 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function InputField() {
+export default function InputField({name}) {
   return (
     <TextInput style={styles.mainContainer}
-      placeholder='enter input'
+      placeholder={name}
       placeholderTextColor='grey'
     />
   )
