@@ -5,13 +5,14 @@ import InputField from '../components/InputField';
 import CustomButton from '../components/CustomButton';
 import Check from '../components/Check';
 
-export default function ResetPassword() {
+export default function SignUp() {
   return (
     <View style={styles.mainContainer}>
-      <Header name="Reset Password" />
+      <Header name="Sign Up" />
+      <InputField name="email" />
       <InputField name="password" />
       <InputField name="confirm password"/>
-      <CustomButton name="Login In" />
+      <CustomButton name="Sign Up" />
     </View>
   )
 }
