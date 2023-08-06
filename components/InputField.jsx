@@ -21,9 +21,9 @@ export default function InputField({ name }) {
                 <Image style={styles.imageShape}
                     source={
                         ((name === 'password' || name === 'confirm password') && eye === true) ?
-                            require('../assets/Image/eye.png')
+                            require('../assets/Image/visible.png')
                             :
-                            require('../assets/Image/closeEye.png')
+                            require('../assets/Image/hide.png')
                     } />
             </TouchableWithoutFeedback>
          </View>
