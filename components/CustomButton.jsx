@@ -1,21 +1,22 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+const CustomButton =function ({ name, onPress, navigation }) {
 
-const CustomButton =({name})=>{
-    if(name!="Forgot password"){
-        return(
-        <TouchableOpacity style={styles.ButtonContainer}>
-            <Text style={styles.ButtonTextDesign}>
-                {name}
-            </Text>
-        </TouchableOpacity>)}
-    else{ 
+    if (name != "Forgot password") {
         return (
-        <TouchableOpacity style={styles.ButtonContainer2}>
-            <Text style={styles.ButtonTextDesign2}>
-                {name}
-            </Text>
-        </TouchableOpacity>
-        )
+            <TouchableOpacity onPress={onPress} style={styles.ButtonContainer}>
+                <Text style={styles.ButtonTextDesign}>
+                    {name}
+                </Text>
+            </TouchableOpacity>);
+    }
+    else {
+        return (
+            <TouchableOpacity onPress={onPress} style={styles.ButtonContainer2}>
+                <Text style={styles.ButtonTextDesign2}>
+                    {name}
+                </Text>
+            </TouchableOpacity>
+        );
     }
 }
 const styles=StyleSheet.create({
@@ -26,7 +27,8 @@ const styles=StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     borderRadius:15,
-    alignSelf:'center'
+    alignSelf:'center',
+    marginBottom:'5%'
  },
  ButtonTextDesign:{
     color:'#F8F9FB',

@@ -1,8 +1,8 @@
-import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, Text } from 'react-native'
 import { useState } from 'react';
 import React from 'react'
 
-export default function Check() {
+export default function Check({name}) {
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
   return (
@@ -15,6 +15,7 @@ export default function Check() {
           }/>
    
       </TouchableOpacity>
+      <Text style={{color:'grey'}}>{name}</Text>
     </View>
   )
 
@@ -26,10 +27,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginLeft: '5%'
+    marginLeft: '5%',
+    marginBottom:'5%'
   },
   imageStyle: {
     height: 20,
-    width: 20
+    width: 20,
+    marginRight:10
   }
 });
