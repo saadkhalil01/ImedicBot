@@ -14,12 +14,10 @@ export default function HeaderButton({ name,text,onPress }) {
 const styles = StyleSheet.create({
     LeftBox: {
         flexDirection: 'row', 
-        maxWidth: '40%', 
         justifyContent: 'space-between'
     },
     buttonStyle: {
         padding: 5,
-        width: '50%',
         alignItems: 'center',
         backgroundColor: '#00A3FF',
         borderRadius: 10
