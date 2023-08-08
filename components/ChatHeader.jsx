@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { widthPercentageToDP } from 'react-native-responsive-screen';
+import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
+import ChatHistory from '../Screens/ChatHistory';
 
-export default function ChatHeader({ name,onPress }) {
+export default function ChatHeader({ name,onPress}) {
     if (name != 'chat')
         return (
             <View style={styles.HeaderContainer}>
@@ -27,22 +28,24 @@ export default function ChatHeader({ name,onPress }) {
 const styles = StyleSheet.create({
     HeaderContainer: {
         width: widthPercentageToDP(100),
-        height: 55,
+        height: 75,
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
         marginBottom: '0%',
-        elevation:3
+        borderBottomWidth:0.5,
+        borderColor:'black'
     },
     HeaderContainer2: {
         width: widthPercentageToDP(100),
-        height: 55,
+        height: heightPercentageToDP(10),
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
         paddingRight:40,
-        marginBottom: '2%'
+        borderBottomWidth:0.5,
+        borderColor:'black'
     },
     headingStyle: {
         color: '#00A3FF',
@@ -60,8 +63,10 @@ const styles = StyleSheet.create({
     backButton: {
         paddingLeft:10,
         backgroundColor: '#FFFFFF',
-        height: 55,
+        height: heightPercentageToDP(10),
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderBottomWidth:0.5,
+        borderColor:'black'
     }
 });

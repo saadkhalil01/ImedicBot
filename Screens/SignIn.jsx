@@ -9,6 +9,7 @@ import ForgotPassword from './ForgotPassword';
 import HeaderButton from '../components/HeaderButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import ChatHistory from './ChatHistory';
 
 export default function SignIn({ navigation }) {
   return (
@@ -28,7 +29,7 @@ export default function SignIn({ navigation }) {
           <InputField name="email" />
           <InputField name="password" />
           <Check name='Remeber me' />
-          <CustomButton name="Login" onPress={() => { navigation.navigate(SignUp) }} />
+          <CustomButton name="Login" onPress={() => { navigation.navigate(ChatHistory) }} />
           <CustomButton name="Forgot password" onPress={() => { navigation.navigate(ForgotPassword) }} />
       </View>
       </View>

@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
         width: 25
     },
     TextStyle: {
+        width: '90%',
+        height: 60,
         color: 'black',
     }
 

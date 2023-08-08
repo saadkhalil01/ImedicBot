@@ -5,6 +5,8 @@ import SignUp from './SignUp'
 import ResetPassword from './ResetPassword'
 import ForgotPassword from './ForgotPassword'
 import React from 'react'
+import ChatHistory from './ChatHistory'
+import Chat from './Chat'
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,8 @@ export default function NavigationStack() {
         <Stack.Screen name='SignUp' component={SignUp}/>
         <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
         <Stack.Screen name='ResetPassword' component={ResetPassword}/>
+        <Stack.Screen name='ChatHistory' component={ChatHistory}/>
+        <Stack.Screen name='Chat' component={Chat}/>
      </Stack.Navigator>
    </NavigationContainer>
   )
