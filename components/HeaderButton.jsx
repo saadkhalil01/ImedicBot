@@ -8,7 +8,6 @@ export default function HeaderButton({ name,text,onPress }) {
             <TouchableOpacity onPress={onPress} style={styles.buttonStyle}>
                 <Text style={{ color: '#FFFFFF', fontSize: 14 }}>{name}</Text>
             </TouchableOpacity>
-
         </View>
     )
 }
@@ -17,8 +16,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         width: 120, 
         justifyContent: 'space-between',
-        alignSelf:'center',
-        marginEnd:'10%'
+        alignSelf:'center'
     },
     buttonStyle: {
         padding: 5,

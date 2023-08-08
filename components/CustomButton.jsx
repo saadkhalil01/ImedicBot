@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { heightPercentageToDP } from "react-native-responsive-screen";
 const CustomButton =function ({ name, onPress, navigation }) {
 
     if (name != "Forgot password") {
@@ -28,7 +29,7 @@ const styles=StyleSheet.create({
     alignItems:'center',
     borderRadius:15,
     alignSelf:'center',
-    marginBottom:'5%'
+    marginBottom:heightPercentageToDP(2)
  },
  ButtonTextDesign:{
     color:'#F8F9FB',

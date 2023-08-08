@@ -35,28 +35,29 @@ const styles = StyleSheet.create({
   customHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingLeft: 20,
-    paddingRight: 15,
-    height: 55,
+    height: hp(10),
     alignItems: 'center',
+    paddingLeft:'5%',
+    paddingRight:'13%'
   },
   headingStyle: {
     color: '#00A3FF',
     fontSize: 14,
     fontWeight: '800',
-    width: 60
+    width:'20%'
   },
   mainContainer0: {
-    height: 275,
-    width: 365
+    position:'absolute',
+    top:75,
+    height: 300,
+    width: wp(100)
   },
   mainContainer: {
-    position: 'absolute',
-    top: 300,
-    width: 360,
-    height: 670,
+    top:280,
+    zIndex: 1,
+    width:wp(100),
+    height:hp(100),
     backgroundColor: '#FFFFFF',
-    paddingTop: 10,
-    borderRadius: 20
+    borderRadius:20
   }
 });

@@ -28,24 +28,26 @@ export default function ChatHeader({ name,onPress}) {
 const styles = StyleSheet.create({
     HeaderContainer: {
         width: widthPercentageToDP(100),
-        height: 75,
+        height: 60,
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
-        marginBottom: '0%',
+        marginBottom: '2%',
         borderBottomWidth:0.5,
-        borderColor:'black'
+        borderColor:'grey'
+
     },
     HeaderContainer2: {
         width: widthPercentageToDP(100),
-        height: heightPercentageToDP(10),
+        height: 60,
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
         paddingRight:40,
         borderBottomWidth:0.5,
-        borderColor:'black'
+        borderColor:'grey',
+        marginBottom: '0%',
     },
     headingStyle: {
         color: '#00A3FF',
@@ -63,10 +65,10 @@ const styles = StyleSheet.create({
     backButton: {
         paddingLeft:10,
         backgroundColor: '#FFFFFF',
-        height: heightPercentageToDP(10),
+        height: 60,
         alignItems: 'center',
         justifyContent: 'center',
         borderBottomWidth:0.5,
-        borderColor:'black'
+        borderColor:'grey'
     }
 });

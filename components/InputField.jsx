@@ -2,6 +2,7 @@ import { View, Image, TextInput, StyleSheet,TouchableWithoutFeedback, secureText
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import { useState } from 'react';
 import React from 'react'
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 export default function InputField({ name }) {
     const [eye, setEye] = useState(false);
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         padding: 10,
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom:'5%'
+        marginBottom:heightPercentageToDP(2)
     },
     imageShape: {
         height: 25,
