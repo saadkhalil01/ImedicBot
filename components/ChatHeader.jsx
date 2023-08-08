@@ -28,7 +28,7 @@ export default function ChatHeader({ name,onPress}) {
 const styles = StyleSheet.create({
     HeaderContainer: {
         width: widthPercentageToDP(100),
-        height: 60,
+        height: heightPercentageToDP(10),
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     HeaderContainer2: {
         width: widthPercentageToDP(100),
-        height: 60,
+        height: heightPercentageToDP(10),
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     backButton: {
         paddingLeft:10,
         backgroundColor: '#FFFFFF',
-        height: 60,
+        height: heightPercentageToDP(10),
         alignItems: 'center',
         justifyContent: 'center',
         borderBottomWidth:0.5,

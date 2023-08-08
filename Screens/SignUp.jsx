@@ -6,7 +6,7 @@ import CustomButton from '../components/CustomButton';
 import SignIn from './SignIn';
 import HeaderButton from '../components/HeaderButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
-import { heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import { heightPercentageToDP as hp, widthPercentageToDP, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 
 export default function SignUp({ navigation }) {
@@ -15,7 +15,7 @@ export default function SignUp({ navigation }) {
       <View style={{ flex: 1, height: hp(100) }}>
         <View style={styles.customHeader}>
           <Text style={styles.headingStyle}>iMEDIC BOT</Text>
-          <HeaderButton name='Sign In' text='already have an account?' onPress={() => { navigation.navigate(SignIn) }} />
+          <HeaderButton name='Sign In' text='Already have an account?' onPress={() => { navigation.navigate(SignIn) }} />
         </View>
         <Image style={styles.mainContainer0} resizeMode='stretch'
           source={require('../assets/Image/imedicBot.png')} />
@@ -32,32 +32,33 @@ export default function SignUp({ navigation }) {
   )
 }
 const styles = StyleSheet.create({
+
   customHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    padding: widthPercentageToDP(4),
     height: hp(10),
-    alignItems: 'center',
-    paddingLeft:'5%',
-    paddingRight:'13%'
+    alignItems: 'center'
   },
   headingStyle: {
     color: '#00A3FF',
     fontSize: 14,
     fontWeight: '800',
-    width:'20%'
+    width: '20%'
   },
   mainContainer0: {
-    position:'absolute',
-    top:75,
+    position: 'absolute',
+    top: 75,
     height: 300,
     width: wp(100)
   },
   mainContainer: {
-    top:280,
+    top: 250,
     zIndex: 1,
-    width:wp(100),
-    height:hp(100),
+    width: wp(100),
+    height: hp(100),
     backgroundColor: '#FFFFFF',
-    borderRadius:20
+    borderRadius: 20,
+    marginBottom: 20
   }
 });

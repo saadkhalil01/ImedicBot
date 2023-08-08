@@ -7,7 +7,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import HeaderButton from '../components/HeaderButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { heightPercentageToDP as hp, widthPercentageToDP, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 
 export default function ResetPassword({ navigation }) {
@@ -39,30 +39,29 @@ const styles = StyleSheet.create({
   customHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    padding:widthPercentageToDP(4),
     height: hp(10),
-    alignItems: 'center',
-    paddingLeft:'5%',
-    paddingRight:'10%'
+    alignItems: 'center'
   },
-  headingStyle: {
-    color: '#00A3FF',
-    fontSize: 14,
-    fontWeight: '800',
-    width:'20%'
-  },
-  mainContainer0: {
-    position:'absolute',
-    top:75,
-    height: 300,
-    width: wp(100)
-  },
-  mainContainer: {
-    top:250,
-    zIndex: 1,
-    width:wp(100),
-    height:hp(100),
-    backgroundColor: '#FFFFFF',
-    borderRadius:20,
-    marginBottom:20
-  }
+    headingStyle: {
+      color: '#00A3FF',
+      fontSize: 14,
+      fontWeight: '800',
+      width:'20%'
+    },
+    mainContainer0: {
+      position:'absolute',
+      top:75,
+      height: 300,
+      width: wp(100)
+    },
+    mainContainer: {
+      top:250,
+      zIndex: 1,
+      width:wp(100),
+      height:hp(100),
+      backgroundColor: '#FFFFFF',
+      borderRadius:20,
+      marginBottom:20
+    }
 });
