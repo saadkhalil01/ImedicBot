@@ -23,9 +23,10 @@ export default function Chat({ navigation }) {
       </ScrollView>
       <View style={{
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#FFFFFF'
+        backgroundColor:'#FFFFFF',
+        height:70
       }}>
         <TextInput
           placeholder='Type your message'
@@ -42,12 +43,14 @@ export default function Chat({ navigation }) {
 }
 const styles = StyleSheet.create({
   inputDesign: {
-    height: 55,
+    height: 65,
     width:widthPercentageToDP(80),
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'white',
     marginTop: 10,
     padding: 20,
-    color:'black'
+    color:'black',
+    fontSize:16
+    
   },
   ChatDesign: {
     flex: 1,
