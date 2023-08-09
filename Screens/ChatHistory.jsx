@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ChatHeader from '../components/ChatHeader';
 import Chat from './Chat';
 import { heightPercentageToDP } from 'react-native-responsive-screen';
+import UserDetails from './UserDetails';
 
 export default function ChatHistory({ navigation }) {
 
@@ -18,16 +19,16 @@ export default function ChatHistory({ navigation }) {
     function ChatComponent(props) {
         return (
             <TouchableOpacity onPress={() => { navigation.navigate(Chat) }} style={styles.chatcomponentshape}>
-                <Image style={{ width: 25, marginRight: 5 }} source={require('../assets/Image/sestoscope.png')} />
-                <Text style={{ color: 'grey', fontSize: 20, width: 250, marginLeft: 4 }}>{props.text}</Text>
-                <Image source={require('../assets/Image/trash.png')} />
+                <Image style={{height:15, width: 15,marginLeft:10}} source={require('../assets/Image/sestoscope.png')} />
+                <Text style={{ color: 'grey', fontSize: 15, width: 210, marginLeft: 4 }}>{props.text}</Text>
+                <Image style={{width:15,height:15,marginRight:10}}source={require('../assets/Image/trash.png')} />
             </TouchableOpacity>
         )
     }
 
     return (
         <View style={{ flex: 1 }}>
-            <ChatHeader name='chatHitory' />
+            <ChatHeader name='chatHitory' onPress={()=>{navigation.navigate(UserDetails)}} />
             <ScrollView style={styles.historyDesign}>
                 {dataList.map((item, index) => (
                     <ChatComponent key={index} text={item}/>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
-        fontSize: 32
+        fontSize: 32 
     },
     chatcomponentshape: {
         backgroundColor: '#FFFFFF',

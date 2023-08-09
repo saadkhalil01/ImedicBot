@@ -1,8 +1,5 @@
-import React from 'react'
-import NavigationStack from './Screens/NavigatorStack'
-import ChatHeader from './components/ChatHeader'
-import ChatHistory from './Screens/ChatHistory'
-import Chat from './Screens/Chat'
+import NavigationStack from "./Screens/NavigatorStack";
+
 
 export default function App() {
   return (

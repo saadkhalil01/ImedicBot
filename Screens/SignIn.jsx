@@ -28,8 +28,8 @@ export default function SignIn({ navigation }) {
           <Header name="Sign In" />
           <InputField name="email" />
           <InputField name="password" />
-          <Check name='Remeber me' />
-          <CustomButton name="Login" onPress={() => { navigation.navigate(ChatHistory) }} />
+          <Check name='Remember me' />
+          <CustomButton name="Login" onPress={() => { navigation.navigate(ChatHistory)}} />
           <CustomButton name="Forgot password" onPress={() => { navigation.navigate(ForgotPassword) }} />
       </View>
       </View>

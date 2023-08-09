@@ -23,10 +23,9 @@ export default function Chat({ navigation }) {
       </ScrollView>
       <View style={{
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor:'#FFFFFF',
-        height:70
       }}>
         <TextInput
           placeholder='Type your message'
@@ -34,7 +33,7 @@ export default function Chat({ navigation }) {
           style={styles.inputDesign}
         />
         <TouchableOpacity>
-        <Image style={{backgroundColor:'#FFFFFF',height:50,width:50,marginRight:20}} source={require('../assets/Image/send.png')} />
+        <Image style={{backgroundColor:'#FFFFFF',height:30,width:30}} source={require('../assets/Image/send.png')} />
         </TouchableOpacity>
       </View>
 
@@ -43,8 +42,8 @@ export default function Chat({ navigation }) {
 }
 const styles = StyleSheet.create({
   inputDesign: {
-    height: 65,
-    width:widthPercentageToDP(80),
+    
+    width:'90%',
     backgroundColor: 'white',
     marginTop: 10,
     padding: 20,
