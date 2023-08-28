@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
 import Header from '../components/Header'
 import InputField from '../components/InputField';
 import CustomButton from '../components/CustomButton';
@@ -7,9 +7,28 @@ import SignIn from './SignIn';
 import HeaderButton from '../components/HeaderButton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 import { heightPercentageToDP as hp, widthPercentageToDP, widthPercentageToDP as wp } from 'react-native-responsive-screen';
-
+import axios from 'axios';
 
 export default function SignUp({ navigation }) {
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ 
+  const signUpAPI = (email,password) => {
+    
+    axios.post("http://192.168.1.20:8000/signUp", {
+      email: email,
+      password: password
+    })
+      .then((response) => {
+        console.log(response.data.error);
+      })
+      .catch((error) => {
+        console.log('Axios error:', error);
+      });
+    
+} 
+
   return (
     <KeyboardAwareScrollView>
       <View style={{ flex: 1, height: hp(100) }}>
@@ -21,10 +40,10 @@ export default function SignUp({ navigation }) {
           source={require('../assets/Image/imedicBot.png')} />
         <View style={styles.mainContainer}>
           <Header name="Sign Up" />
-          <InputField name="email" />
-          <InputField name="password" />
-          <InputField name="confirm password" />
-          <CustomButton name="Sign Up" onPress={() => { navigation.navigate(SignIn) }} />
+          <InputField name="email" email={email} setEmail={setEmail}  />
+          <InputField name="password" password={password} setPassword={setPassword}  />
+          <InputField name="confirm password" password={password} setPassword={setPassword}/>
+          <CustomButton name="Sign Up" onPress={() => {signUpAPI(email,password)}} />
         </View>
       </View>
     </KeyboardAwareScrollView>

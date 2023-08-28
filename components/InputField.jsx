@@ -4,7 +4,7 @@ import { useState } from 'react';
 import React from 'react'
 import { heightPercentageToDP } from 'react-native-responsive-screen';
 
-export default function InputField({ name }) {
+export default function InputField({ name,email,password,setPassword,setEmail }) {
     const [eye, setEye] = useState(false);
     const [input, setInput] = useState('');
     const [hide, Show] = useState(true);
@@ -16,8 +16,8 @@ export default function InputField({ name }) {
             <TextInput style={styles.TextStyle}
                 placeholder={name}
                 placeholderTextColor='grey'
-                onChangeText={setInput}
-                value={input}
+                onChangeText={(val)=>{setPassword(val)}}
+                value={password}
                 secureTextEntry={hide}
             />
             <TouchableWithoutFeedback onPress={() => {setEye(!eye);Show(!hide)}}>
@@ -38,8 +38,8 @@ export default function InputField({ name }) {
             <TextInput style={styles.TextStyle}
                 placeholder={name}
                 placeholderTextColor='grey'
-                onChangeText={setInput}
-                value={input}
+                onChangeText={(val)=>{setEmail(val)}}
+                value={email}
             />
             </View>
         )
