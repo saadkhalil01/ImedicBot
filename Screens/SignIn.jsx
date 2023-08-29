@@ -19,7 +19,7 @@ export default function SignIn({ navigation }) {
 
   const loginAPI = (email,password) => {
     
-    axios.post("http://192.168.1.20:8000/login", {
+    axios.post("http://192.168.1.3:8000/api/user/login", {
       email: email,
       password: password
     })
@@ -30,7 +30,7 @@ export default function SignIn({ navigation }) {
         console.log('Axios error:', error);
       });
     
-}
+} 
 
 return (
   <KeyboardAwareScrollView>

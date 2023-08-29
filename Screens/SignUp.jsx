@@ -16,12 +16,12 @@ export default function SignUp({ navigation }) {
  
   const signUpAPI = (email,password) => {
     
-    axios.post("http://192.168.1.20:8000/signUp", {
+    axios.post("http://192.168.1.3:8000/api/user/signup", {
       email: email,
       password: password
     })
       .then((response) => {
-        console.log(response.data.error);
+        console.log(response.data.message);
       })
       .catch((error) => {
         console.log('Axios error:', error);
