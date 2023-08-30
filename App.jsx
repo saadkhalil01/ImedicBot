@@ -4,6 +4,6 @@ import OTP from "./Screens/OTP";
 
 export default function App() {
   return (
-   <OTP/>
+   <NavigationStack/>
   )
 }

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import React from 'react'
 import { heightPercentageToDP } from 'react-native-responsive-screen';
 
-export default function InputField({ name,email,password,setPassword,setEmail }) {
+export default function InputField({ name,email,password,setPassword,setEmail,otp,setOtp }) {
     const [eye, setEye] = useState(false);
     const [input, setInput] = useState('');
     const [hide, Show] = useState(true);
@@ -32,7 +32,7 @@ export default function InputField({ name,email,password,setPassword,setEmail })
          </View>
         </>
     )}
-    else{
+    else if(name==='email'){
         return(
             <View style={styles.mainContainer}>
             <TextInput style={styles.TextStyle}
@@ -40,6 +40,19 @@ export default function InputField({ name,email,password,setPassword,setEmail })
                 placeholderTextColor='grey'
                 onChangeText={(val)=>{setEmail(val)}}
                 value={email}
+            />
+            </View>
+        )
+    }
+    else{
+        return(
+            <View style={styles.mainContainer}>
+            <TextInput style={styles.TextStyle}
+                placeholder={name}
+                placeholderTextColor='grey'
+                keyboardType='number-pad'
+                onChangeText={(val)=>{setOtp(val)}}
+                value={otp}
             />
             </View>
         )

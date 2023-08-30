@@ -8,6 +8,7 @@ import React from 'react'
 import ChatHistory from './ChatHistory'
 import Chat from './Chat'
 import UserDetails from './UserDetails'
+import OTP from './OTP'
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function NavigationStack() {
     <Stack.Navigator screenOptions={{headerShown:false}} >
         <Stack.Screen name='SignIn' component={SignIn}/>
         <Stack.Screen name='SignUp' component={SignUp}/>
+        <Stack.Screen name='OTP' component={OTP}/>
         <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
         <Stack.Screen name='ResetPassword' component={ResetPassword}/>
         <Stack.Screen name='ChatHistory' component={ChatHistory}/>
