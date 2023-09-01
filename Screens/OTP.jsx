@@ -11,14 +11,15 @@ import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import ChatHistory from './ChatHistory';
 import axios from 'axios';
 import ResetPassword from './ResetPassword';
+import http from '../Api';
 
 export default function OTP({route, navigation}) {
   const [otp, setOtp] = useState('');
   const {email,type} = route.params;
 
   const verifyOTP =  (email,type) => {
-    axios
-      .post(`http://192.168.1.9:8000/api/user/otp/verify/${type}`, {
+    http
+      .post(`/user/otp/verify/${type}`, {
         email: email,
         otp: otp,
       })
@@ -38,8 +39,8 @@ export default function OTP({route, navigation}) {
   };
 
   const resendOtp = (email) => {
-    axios
-      .post(`http://192.168.1.9:8000/api/user/resend/otp/${email}`)
+    http
+      .post(`/user/resend/otp/${email}`)
       .then(response => {
         console.log(response.data.message);
       })

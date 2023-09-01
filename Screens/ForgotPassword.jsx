@@ -13,13 +13,14 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import axios from 'axios';
+import http from '../Api';
 
 export default function ForgotPassword({navigation}) {
   const [email, setEmail] = useState('');
 
   const ForgotPass = async () => {
     try {
-      const response = await axios.post("http://192.168.1.9:8000/api/user/forgot/email", {
+      const response = await http.post("/user/forgot/email", {
         email: email
       });
 

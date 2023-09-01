@@ -14,6 +14,7 @@ import {
 } from 'react-native-responsive-screen';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import axios from 'axios';
+import http from '../Api';
 
 export default function ResetPassword({navigation, route}) {
   const [password, setPassword] = useState('');
@@ -21,8 +22,8 @@ export default function ResetPassword({navigation, route}) {
   const refRBSheet = useRef();
 
   const resetApi = (email, resetPasswordToken) => {
-    axios
-      .post(`http://192.168.1.9:8000/api/user//reset/password/${email}`, {
+   http
+      .post(`/user/reset/password/${email}`, {
         password: password,
         resetPasswordToken: resetPasswordToken,
       })

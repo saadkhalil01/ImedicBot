@@ -13,6 +13,7 @@ import {
 } from 'react-native-responsive-screen';
 import axios from 'axios';
 import OTP from './OTP';
+import http from '../Api';
 
 export default function SignUp({navigation}) {
   const [email, setEmail] = useState('');
@@ -26,8 +27,8 @@ export default function SignUp({navigation}) {
   }
 
   const signUpAPI = (email, password) => {
-    axios
-      .post(`http://192.168.1.9:8000/api/user/signup`, {
+    http
+      .post(`/user/signup`, {
         email: email,
         password: password,
       })

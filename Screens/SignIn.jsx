@@ -15,11 +15,15 @@ import {
 } from 'react-native-responsive-screen';
 import ChatHistory from './ChatHistory';
 import axios from 'axios';
+import http from '../Api';
+import { useDispatch } from 'react-redux';
+import { setAuth } from '../Store/user';
 
 export default function SignIn({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch()
 
   function isEmail(emailAdress) {
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -38,11 +42,10 @@ export default function SignIn({navigation}) {
         email: email,
         password: password,
       };
-      await axios
-        .post('http://192.168.1.9:8000/api/user/login', {user})
+      await http
+        .post('/user/login', {user})
         .then(response => {
-          console.log(response.data.message);
-          navigation.navigate(ChatHistory);
+          dispatch(setAuth(response.data.data))
         })
         .catch(error => {
           console.log(error);

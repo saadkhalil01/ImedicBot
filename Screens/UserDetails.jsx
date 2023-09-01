@@ -6,6 +6,8 @@ import ChatHistory from './ChatHistory';
 import ChatHeader from '../components/ChatHeader';
 import SignIn from './SignIn';
 import { nativeViewGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/NativeViewGestureHandler';
+import { purgeAuth } from '../Store/user';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function UserDetails({ navigation }) {
@@ -39,7 +41,7 @@ export default function UserDetails({ navigation }) {
                         <Text style={styles.iconText}> twitter </Text>
                     </View>
                     <View style={styles.seperator} />
-                    <TouchableOpacity onPress={() => { navigation.navigate(SignIn) }}>
+                    <TouchableOpacity onPress={() => {}}>
                         <View style={styles.iconPlusTextContainer}>
                             <Image style={styles.iconDesign} source={require('../assets/Image/logout.png')} />
                             <Text style={styles.iconText}>Logout</Text>
