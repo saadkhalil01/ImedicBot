@@ -46,6 +46,7 @@ export default function SignIn({navigation}) {
         .post('/user/login', {user})
         .then(response => {
           dispatch(setAuth(response.data.data))
+          navigation.navigate(ChatHistory);
         })
         .catch(error => {
           console.log(error);

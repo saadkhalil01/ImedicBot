@@ -8,9 +8,9 @@ export const userSlice = createSlice({
   },
   reducers: {
     setAuth: (state, action) => {
-      state.isLoggedIn = true
-      AsyncStorage.setItem('token', action.payload.user.token);
-      console.log('setAuth')
+      state.isLoggedIn = action.payload.isLoggedIn;
+      AsyncStorage.setItem('token', action.payload.user.token)
+      console.log(action.payload.isLoggedIn);
     },
     purgeAuth: state => {
       state.isLoggedIn = false;

@@ -8,10 +8,11 @@ import SignIn from './SignIn';
 import { nativeViewGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/NativeViewGestureHandler';
 import { purgeAuth } from '../Store/user';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch } from 'react-redux';
 
 
 export default function UserDetails({ navigation }) {
-
+    const dispatch = useDispatch();
     return (
         <View style={styles.mainContainer}>
             <TouchableOpacity onPress={()=>{navigation.navigate(ChatHistory)}} style={styles.backButton}>
@@ -41,7 +42,7 @@ export default function UserDetails({ navigation }) {
                         <Text style={styles.iconText}> twitter </Text>
                     </View>
                     <View style={styles.seperator} />
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => {dispatch(purgeAuth())}}>
                         <View style={styles.iconPlusTextContainer}>
                             <Image style={styles.iconDesign} source={require('../assets/Image/logout.png')} />
                             <Text style={styles.iconText}>Logout</Text>
