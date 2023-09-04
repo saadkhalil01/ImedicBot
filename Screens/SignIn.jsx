@@ -13,17 +13,15 @@ import {
   widthPercentageToDP,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import ChatHistory from './ChatHistory';
-import axios from 'axios';
 import http from '../Api';
-import { useDispatch } from 'react-redux';
-import { setAuth } from '../Store/user';
+import {useDispatch} from 'react-redux';
+import {setAuth} from '../Store/user';
 
 export default function SignIn({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function isEmail(emailAdress) {
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -45,12 +43,17 @@ export default function SignIn({navigation}) {
       await http
         .post('/user/login', {user})
         .then(response => {
-          dispatch(setAuth(response.data.data))
-          navigation.navigate(ChatHistory);
+          const context = response.data.data.user;
+          console.log("Signin ka response:",context.email)
+          dispatch(
+            setAuth(
+              context,context.email
+            ),
+          );
         })
         .catch(error => {
           console.log(error);
-          Alert.alert("Invalid Credentials")
+          Alert.alert('Invalid Credentials');
         });
     } catch (err) {
       console.log(err);
@@ -87,13 +90,13 @@ export default function SignIn({navigation}) {
           <CustomButton
             name="Login"
             onPress={() => {
-              if(isEmail(email)){
-              email === '' || password === '' || !email || !password
-                ? errorfield()
-                : loginAPI(email, password);}
-                else{
-                  Alert.alert('email format is not valid use "abc@gmail.com" !')
-                }
+              if (isEmail(email)) {
+                email === '' || password === '' || !email || !password
+                  ? errorfield()
+                  : loginAPI(email, password);
+              } else {
+                Alert.alert('email format is not valid use "abc@gmail.com" !');
+              }
             }}
           />
           <CustomButton

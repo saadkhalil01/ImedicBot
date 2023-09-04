@@ -18,9 +18,7 @@ export default function NotAuthStack() {
       <Stack.Screen name="OTP" component={OTP} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="ResetPassword" component={ResetPassword} />
-      <Stack.Screen name="ChatHistory" component={ChatHistory} />
-      <Stack.Screen name="Chat" component={Chat} />
-      <Stack.Screen name="UserDetails" component={UserDetails} />
+
     </Stack.Navigator>
   );
 }

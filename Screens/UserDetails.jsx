@@ -1,21 +1,24 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import React, {} from 'react';
 import {Image} from 'react-native';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
 import ChatHistory from './ChatHistory';
-import {purgeAuth, selectEmail} from '../Store/user';
+import {purgeAuth} from '../Store/user';
 import {useDispatch, useSelector} from 'react-redux';
-import NavigationStack from './NavigatorStack';
-import SignIn from './SignIn';
-import NotAuthStack from './NotAuthStack';
 
-export default function UserDetails({route,navigation}) {
+export default function UserDetails({navigation}) {
   const dispatch = useDispatch();
-  const name = useSelector(selectEmail);
-  console.log(name)
+
+  const user = useSelector(state=>state.user.value);
+  console.log(user.email)
   return (
     <View style={styles.mainContainer}>
       <TouchableOpacity
@@ -29,16 +32,19 @@ export default function UserDetails({route,navigation}) {
         />
       </TouchableOpacity>
       <View style={styles.mainCard}>
-        <View style={styles.imageCircled}>
-          <Image
-            style={styles.imageDesign}
-            source={require('../assets/Image/download.jpeg')}
-          />
-        </View>
+        <TouchableOpacity onPress={() => refreshScreen()}>
+          <View style={styles.imageCircled}>
+            <Image
+              style={styles.imageDesign}
+              source={require('../assets/Image/download.jpeg')}
+            />
+          </View>
+        </TouchableOpacity>
         <View style={styles.iconsContainer}>
           <Text style={{color: 'black', fontSize: 18, fontWeight: '600'}}>
-            {name}
+            {user.email}
           </Text>
+
           <View style={styles.seperator} />
           <View style={styles.iconPlusTextContainer}>
             <Image

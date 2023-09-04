@@ -1,34 +1,27 @@
 import {createSlice} from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { act } from 'react-test-renderer';
-import NavigationStack from '../Screens/NavigatorStack';
-import SignIn from '../Screens/SignIn';
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
-    isLoggedIn: false,
+    value: null,
     email:''
   },
   reducers: {
-
     setAuth: (state, action) => {
-      state.isLoggedIn = action.payload.isLoggedIn;
+      state.value = action.payload;
       state.email = action.payload.email;
-      AsyncStorage.setItem('token', action.payload.user.token)
-      console.log(action.payload.isLoggedIn);
+      AsyncStorage.setItem('token', action.payload.token);
+      console.log("setAuth call honay ky bd",state.value)
     },
     purgeAuth: state => {
-      state.isLoggedIn = false;
-      state.email=''
+      state.value = null;
+      state.email='';
       AsyncStorage.removeItem('token');
-      console.log('purgeAuth')
-      //i want to go back to my stack navigator page here and render the isLoggedIn:false stack
+      console.log("purgeAuth call honay ky bd",state.value)
     },
   },
 });
 
 export const {setAuth, purgeAuth} = userSlice.actions;
-export const selectIsLoggedIn = (state) => state.user.isLoggedIn;
-export const selectEmail =(state) => state.user.email;
 export default userSlice.reducer;
